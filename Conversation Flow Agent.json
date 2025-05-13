@@ -1,0 +1,184 @@
+{
+  "agent_id": "",
+  "channel": "voice",
+  "last_modification_timestamp": 1747143850642,
+  "agent_name": "Conversation Flow Agent",
+  "response_engine": {
+    "type": "conversation-flow",
+    "version": 0,
+    "conversation_flow_id": "conversation_flow_2ec0ce673800"
+  },
+  "language": "en-US",
+  "opt_out_sensitive_data_storage": false,
+  "opt_in_signed_url": false,
+  "version": 0,
+  "is_published": true,
+  "version_title": "bbq-nation-agent",
+  "post_call_analysis_model": "gpt-4o-mini",
+  "voice_id": "11labs-Cimo",
+  "fallback_voice_ids": [],
+  "max_call_duration_ms": 3600000,
+  "interruption_sensitivity": 0.8,
+  "voicemail_detection_timeout_ms": 30000,
+  "allow_user_dtmf": true,
+  "user_dtmf_options": {},
+  "retellLlmData": null,
+  "conversationFlow": {
+    "conversation_flow_id": "conversation_flow_2ec0ce673800",
+    "version": 0,
+    "global_prompt": "A restaurant chain specializing in grilled and barbecue items with outlets in Delhi and Bangalore.",
+    "nodes": [
+      {
+        "instruction": {
+          "type": "static_text",
+          "text": "Hello! Welcome to Barbeque Nation. I'm your virtual assistant. How can I help you today? I can provide information about our outlets in Delhi and Bangalore, our menu, or help you make a reservation."
+        },
+        "name": "Welcome Node",
+        "edges": [
+          {
+            "destination_node_id": "node-1747142286115",
+            "id": "edge-1747142485834",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Collect City"
+            }
+          }
+        ],
+        "start_speaker": "agent",
+        "id": "start-node-1747141666179",
+        "type": "conversation",
+        "display_position": {
+          "x": 342,
+          "y": 433
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1747142931507",
+            "id": "edge-1747142286115",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Collect Outlet"
+            }
+          }
+        ],
+        "id": "node-1747142286115",
+        "type": "conversation",
+        "display_position": {
+          "x": 708.2581457002627,
+          "y": 66.72346295083447
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "## OBJECTIVES:\n    - Collect the city (Delhi or Bangalore) for which the customer is inquiring.\n\n## Instructions:\n    1. **Ask which city they're interested in**:\n        - Ask the customer which city's Barbeque Nation they're interested in.\n        - **Verification**: \n            - Once the city is captured, verify if it's Delhi or Bangalore.\n\n## Prohibited Actions:\n    **Under no circumstances you should do the following**:  \n        - Give a list of specific outlets before determining the city.\n        - Not clarifying with the customer if they mention a city other than Delhi or Bangalore.\n        - Asking about reservation details before confirming the city.\n        - Giving additional information like menu items when the customer is not asking for it.\n\n## Additional Context:\n    - The available cities are Delhi and Bangalore.\n    - If the city mentioned by the customer is not Delhi or Bangalore, clarify that currently we have information only for outlets in these two cities.\n    - If the city is Delhi or Bangalore, confirm and prepare to collect which specific outlet they're interested in.\n\n## Examples:\n    - \"Which city's Barbeque Nation location are you interested in? We currently have information for Delhi and Bangalore.\""
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1747143002583",
+            "id": "edge-1747142931507",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Collect Information Provision"
+            }
+          }
+        ],
+        "id": "node-1747142931507",
+        "type": "conversation",
+        "display_position": {
+          "x": 1215.7169130498432,
+          "y": 227.07919035034308
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "## OBJECTIVES:\n    - Collect the specific Barbeque Nation outlet the customer is interested in.\n    - Confirm the outlet once it's identified.\n\n## Instructions:\n    1. **Ask for which outlet they're interested in**:\n        - For Delhi outlets: Vasant Kunj, Janakpuri, or Connaught Place\n        - For Bangalore outlets: Koramangala, JP Nagar, Indiranagar, or Electronic City\n        - **Verification**: \n            - Once the outlet is captured, verify if it's available in our list.\n\n## Prohibited Actions:\n    **Under no circumstances you should do the following**:  \n        - Not clarifying if the customer mentions an outlet we don't have information for.\n        - Asking about reservation details before confirming the outlet.\n        - Giving menu information when the customer hasn't asked for it.\n\n## Additional Context:\n    - Delhi outlets: Vasant Kunj, Janakpuri, Connaught Place\n    - Bangalore outlets: Koramangala, JP Nagar, Indiranagar, Electronic City\n    - If the outlet mentioned is not in our list, clarify and ask if they'd like information about another outlet.\n\n## Examples:\n    - For Delhi: \"Which Barbeque Nation outlet in Delhi are you interested in? We have information for Vasant Kunj, Janakpuri, and Connaught Place.\"\n    - For Bangalore: \"Which Barbeque Nation outlet in Bangalore are you interested in? We have information for Koramangala, JP Nagar, Indiranagar, and Electronic City.\""
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1747143074636",
+            "id": "edge-1747143002583",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Collect Reservation Collection"
+            }
+          }
+        ],
+        "id": "node-1747143002583",
+        "type": "conversation",
+        "display_position": {
+          "x": 1724.7928284496907,
+          "y": 75.39049350088955
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "## OBJECTIVES:\n    - Inform the customer about the requested information about Barbeque Nation.\n\n## Instructions:\n    1. **Inform the customer about the requested information**:\n        1.1 Provide details about menu, pricing, offers, or outlet details as requested.\n        **Next step**:\n            1.3 Ask if there's anything else they'd like to know.\n\n## Prohibited Actions:\n    **Under no circumstances you should do the following**:\n        - Providing inaccurate information about Barbeque Nation\n        - Making up details not found in the knowledge base\n        - Not addressing the customer's specific question\n\n## Additional Context:\n    - Refer to the menu PDFs for accurate pricing and dish information\n    - Refer to the outlet PDFs for location details, timings, and amenities\n    - Be concise but thorough in your responses\n    - If you don't have specific information, acknowledge that rather than making it up\n\n## Examples:\n    - \"Barbeque Nation in Koramangala, Bangalore is located at 1st Block and is open from 12 PM to 11 PM. They offer both lunch and dinner buffets starting at ₹799 per person.\""
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1747143198488",
+            "id": "edge-1747143074636",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Collect Contact Information"
+            }
+          }
+        ],
+        "id": "node-1747143074636",
+        "type": "conversation",
+        "display_position": {
+          "x": 2192.33406110011,
+          "y": 198.23429610053375
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "## OBJECTIVES:\n    - Collect reservation details from the customer.\n\n## Instructions:\n    1. **Collect the following reservation details**:\n        - Date of reservation\n        - Time of reservation\n        - Number of guests\n        - Any special requests\n        **Next step**:\n            1.3 Move to collecting contact information.\n\n## Prohibited Actions:\n    **Under no circumstances you should do the following**:\n        - Not collecting complete reservation details\n        - Making a reservation without confirming all details\n        - Promising specific tables or arrangements without verification\n\n## Additional Context:\n    - Politely collect all necessary reservation information\n    - Verify that the requested date and time are valid\n    - Confirm the party size is within reasonable limits (typically 2-20 people)\n    - Let customers know that final confirmation will be sent to their phone number\n\n## Examples:\n    - \"For which date would you like to make your reservation at Barbeque Nation?\"\n    - \"What time would you prefer for your reservation?\"\n    - \"How many people will be joining you for the meal?\"\n    - \"Do you have any special requests or preferences for your reservation?\""
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "id": "edge-1747143198488",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Describe the transition condition"
+            }
+          }
+        ],
+        "id": "node-1747143198488",
+        "type": "conversation",
+        "display_position": {
+          "x": 2609.0520658001183,
+          "y": 81.26142065075834
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "## OBJECTIVES:\n    - Collect the phone number and name of the customer for their reservation.\n    - Confirm the phone number and name of the customer.\n\n## Instructions:\n    1. **Ask for customer name**:\n        1.1 **Ask the name of the customer**\n        **Next Steps**:\n        1.3 If the customer refuses to provide the name, move to 2.1\n    2. **Ask for the phone number**\n        2.1 **Ask for the phone number in 10 digit format.**\n        **Verify the following once the phone number is collected**:\n            - Check if the number has 10 digits\n        **Next Steps**:\n            2.2 If the phone number is not valid, ask them to provide a valid phone number.\n            2.3 If the phone number is valid, then move to step 3.1\n    3. **Confirm the phone number and name**:\n        3.1 Confirm the guest's 10 digit phone number and name and ask if they are correct.\n            - Update the name and phone number if they are not collected correctly.\n\n## Prohibited Actions:\n    **Under no circumstances you should do the following**:\n        - Not collecting name and phone number of the customer.\n        - Fail to collect the customer's 10 digit phone number\n        - Collect or confirm any information other than name and phone number\n        - Assume the customer's name or phone number\n        - Not confirming the phone number after collection\n\n## Additional Context:\n    - Collect only name and phone number of the customer\n    - Provide all responses in natural sentences, not as lists\n\n## Examples:\n    - \"Could you please provide your name for the reservation?\"\n    - \"Can you please provide your 10 digit phone number, reciting it clearly?\"\n    - \"So, [name] your phone number is [phone number], is that correct?\""
+        }
+      }
+    ],
+    "start_node_id": "start-node-1747141666179",
+    "start_speaker": "agent",
+    "model_choice": {
+      "type": "cascading",
+      "model": "gpt-4.1"
+    },
+    "knowledge_base_ids": [],
+    "begin_tag_display_position": {
+      "x": 122,
+      "y": 333
+    },
+    "is_published": true
+  },
+  "llmURL": null
+}
