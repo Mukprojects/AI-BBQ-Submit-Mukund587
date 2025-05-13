@@ -8,8 +8,7 @@ Chatbot Link - Due to Chatbot Retell Api being paid, the service currently was o
 Agent Linked Phone Number - +1 (978) 718-5545
 
 
-https://github.com/Mukprojects/AI-BBQ-Submit-Mukund587/blob/e81328d88114c464214ca82386d6345440c2020a/Screenshot%202025-05-13%20225952.png
-
+![image alt](https://github.com/Mukprojects/AI-BBQ-Submit-Mukund587/blob/main/Screenshot%202025-05-13%20225952.png?raw=true)
 
 ## Features
 
