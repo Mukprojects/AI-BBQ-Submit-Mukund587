@@ -1,0 +1,281 @@
+/* Barbeque Nation Chatbot Styles */
+
+body {
+    background-color: #f8f4f0; /* Warm light beige background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #3a3a3a;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.chat-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+}
+
+.chat-messages {
+    height: 100%;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #fffaf5; /* Light warm background instead of image */
+}
+
+.message {
+    max-width: 80%;
+    margin-bottom: 15px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    position: relative;
+    word-wrap: break-word;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.user-message {
+    background-color: #e25822; /* BBQ Nation orange */
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    background-color: #f9f9f9;
+    color: #3a3a3a;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+    border-left: 3px solid #c94e20; /* BBQ Nation darker orange */
+}
+
+.message-time {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+.user-input {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: 2px solid #e9ecef;
+}
+
+.typing-indicator {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border-left: 3px solid #c94e20;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    float: left;
+    margin: 0 2px;
+    background-color: #e25822;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+.typing-indicator span:nth-of-type(1) {
+    animation: 1s blink infinite 0.3333s;
+}
+
+.typing-indicator span:nth-of-type(2) {
+    animation: 1s blink infinite 0.6666s;
+}
+
+.typing-indicator span:nth-of-type(3) {
+    animation: 1s blink infinite 0.9999s;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Card styling */
+.card {
+    border: none;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: none;
+    background: linear-gradient(135deg, #e25822, #c94e20); /* BBQ Nation orange gradient */
+    padding: 15px 20px;
+}
+
+.card-header h4 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-footer {
+    background-color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 15px 20px;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #e25822; /* BBQ Nation orange */
+    border-color: #e25822;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c94e20; /* Darker BBQ Nation orange */
+    border-color: #c94e20;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-success {
+    background-color: #5ca745; /* Slightly more earthy green */
+    border-color: #5ca745;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: #4a9038;
+    border-color: #4a9038;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-weight: 500;
+}
+
+/* Input group styling */
+.input-group {
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
+}
+
+#user-input:focus {
+    border-color: #e25822;
+    box-shadow: 0 0 0 0.2rem rgba(226, 88, 34, 0.25);
+}
+
+/* Call modal styling */
+.modal-content {
+    border: none;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #e25822, #c94e20);
+    color: white;
+    border-bottom: none;
+    padding: 15px 20px;
+}
+
+#call-status {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #3a3a3a;
+}
+
+/* Phone number styling */
+.phone-number {
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    transition: all 0.2s ease;
+}
+
+.phone-number:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.phone-number a.btn {
+    font-size: 1.25rem;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.alternate-phone {
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #f8f4f0;
+    border: 1px dashed #e0d5c9;
+}
+
+.alternate-phone a {
+    color: #e25822;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alternate-phone a:hover {
+    text-decoration: underline;
+}
+
+/* Error details styling */
+.error-details {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    color: #721c24;
+    padding: 12px;
+    margin-bottom: 15px;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-line;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chat-container {
+        height: 350px;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+}
+
+/* Status message styling */
+#status-message {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+/* Add a little BBQ-themed touch to the scroll bar */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f8f4f0;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #e25822;
+    border-radius: 10px;
+} 
