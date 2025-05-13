@@ -3,8 +3,11 @@
 A voice and text-enabled virtual assistant for Barbeque Nation restaurant, powered by Retell AI and Twilio. This chatbot helps customers get information about outlets, menu items, and make restaurant reservations.
 
 Knowledge Base API Endpoints - https://dashboard.retellai.com/knowledgeBase?knowledge_base_id=knowledge_base_75f8f20bd2eb12a1
+
 Post-Call Analysis Excel Sheet - https://docs.google.com/spreadsheets/d/1lbYDrqNNokr_FTEL5FfLXZHEIH-ZNKOp2LtI8LaARMY/edit?gid=0#gid=0
+
 Chatbot Link - Due to Chatbot Retell Api being paid, the service currently was only able to run locally.
+
 Agent Linked Phone Number - +1 (978) 718-5545
 
 
